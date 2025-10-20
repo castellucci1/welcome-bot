@@ -78,7 +78,7 @@ def handle_member_joined_channel(event, client, logger):
         # Mensaje de bienvenida en el canal
         welcome_message = (
             f"¡Bienvenido/a <@{user_id}> al canal! 🎉\n"
-            f"Me alegra que estés aquí. Si necesitas ayuda, solo menciónname."
+            f"Me alegra que estés aquí. Si necesitas ayuda, solo menciónme."
         )
         
         client.chat_postMessage(

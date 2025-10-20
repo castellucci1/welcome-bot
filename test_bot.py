@@ -89,8 +89,12 @@ def test_requirements():
     """Verifica que requirements.txt tenga las dependencias necesarias"""
     print("\n✓ Probando requirements.txt...")
     
-    with open("requirements.txt", 'r') as f:
-        content = f.read()
+    try:
+        with open("requirements.txt", 'r') as f:
+            content = f.read()
+    except FileNotFoundError:
+        print("  ✗ requirements.txt no encontrado")
+        return False
     
     required_deps = ["slack-bolt", "python-dotenv"]
     
@@ -108,8 +112,12 @@ def test_env_example():
     """Verifica que .env.example tenga las variables necesarias"""
     print("\n✓ Probando .env.example...")
     
-    with open(".env.example", 'r') as f:
-        content = f.read()
+    try:
+        with open(".env.example", 'r') as f:
+            content = f.read()
+    except FileNotFoundError:
+        print("  ✗ .env.example no encontrado")
+        return False
     
     required_vars = ["SLACK_BOT_TOKEN", "SLACK_SIGNING_SECRET", "SLACK_APP_TOKEN"]
     
