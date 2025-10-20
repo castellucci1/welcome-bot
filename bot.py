@@ -57,7 +57,7 @@ def handle_mention(event, say):
     Responde al usuario que mencionó al bot.
     """
     user_id = event["user"]
-    text = event.get("text", "")
+    text = event.get("text", "")  # Texto del mensaje (disponible para procesamiento futuro)
     
     # Responder a la mención
     response = f"¡Hola <@{user_id}>! 👋 Soy el bot de bienvenida. ¿En qué puedo ayudarte?"
@@ -84,7 +84,7 @@ def handle_message_events(event, say):
     
     if channel_type == "im":
         user_id = event["user"]
-        text = event.get("text", "")
+        text = event.get("text", "")  # Texto del mensaje (disponible para procesamiento futuro)
         
         # Responder al mensaje directo
         response = f"¡Hola <@{user_id}>! 👋 Gracias por tu mensaje. Soy el bot de bienvenida y estoy aquí para dar la bienvenida a nuevos miembros."
